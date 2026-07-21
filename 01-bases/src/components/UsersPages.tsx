@@ -1,7 +1,10 @@
 import React from "react";
 import UserRow from "./UserRow";
+import { useUser } from "../hooks/useUser";
 
 const UsersPages = () => {
+  const { pokemons } = useUser();
+  console.log(pokemons);
   return (
     <>
       <h3>Usuarios: </h3>
