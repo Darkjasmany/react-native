@@ -25,6 +25,7 @@ interface AuthState {
 
   // Methods
   loginWithEmailPassword: (email: string, password: string) => void;
+  logout: () => void;
 }
 
 // 2. Definir el contexto
@@ -49,10 +50,17 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
   }, []);
 
   const loginWithEmailPassword = (email: string, password: string) => {
+    console.log(password);
     setUser({
       name: "Jasmany Franco",
       email,
     });
+    setStatus("authenticated");
+  };
+
+  const logout = () => {
+    setUser(undefined);
+    setStatus("unauthenticated");
   };
 
   return (
@@ -67,6 +75,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
 
         // Method
         loginWithEmailPassword,
+        logout,
       }}
     >
       {children}

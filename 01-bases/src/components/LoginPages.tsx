@@ -1,7 +1,8 @@
 import { useAuthContext } from "../context/AuthContext";
 
 const LoginPages = () => {
-  const { isChecking, isAuthenticated } = useAuthContext();
+  const { isChecking, isAuthenticated, loginWithEmailPassword, user, logout } =
+    useAuthContext();
 
   if (isChecking) {
     return <h1>Verificando Autenticación</h1>;
@@ -12,14 +13,23 @@ const LoginPages = () => {
       {isAuthenticated ? (
         <>
           <h3>Bienvenido</h3>
-          <button className="bg-red-500 p-2 text-white rounded-xl mt-2">
+          <pre>{JSON.stringify(user, null, 2)}</pre>
+          <button
+            onClick={() => logout()}
+            className="bg-red-500 p-2 text-white rounded-xl mt-2"
+          >
             Salir
           </button>
         </>
       ) : (
         <>
           <h3>Inicia Sesion</h3>
-          <button className="bg-blue-500 p-2 text-white rounded-xl mt-2">
+          <button
+            onClick={() => {
+              loginWithEmailPassword("jasmanyfranco@gmail.com", "123456");
+            }}
+            className="bg-blue-500 p-2 text-white rounded-xl mt-2"
+          >
             Login
           </button>
         </>
