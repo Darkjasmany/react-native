@@ -1,14 +1,31 @@
 import axios from "axios";
-import type { PokeListResponse } from "../interfaces/reqres.response";
+import type {
+  PokeListResponse,
+  PokemonDetail,
+} from "../interfaces/reqres.response";
 
-export const loadUserAction = async (cantidad: number) => {
+const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
+
+export const loadUserAction = async (
+  limit: number = 10,
+  offset: number = 0,
+): Promise<PokemonDetail[]> => {
   try {
+    // Petición a la lista principal con PokeListResponse
     const { data } = await axios.get<PokeListResponse>(
-      `https://pokeapi.co/api/v2/pokemon/${cantidad}`,
+      `${BASE_URL}?limit=${limit}&offset=${offset}`,
     );
-    return data;
+
+    // Petición individual para cada elemento usando PokemonDetail
+    const pokemonPromises = data.results.map(async (pokemon) => {
+      const resp = await axios.get<PokemonDetail>(pokemon.url);
+      return resp.data;
+    });
+
+    const pokemons = await Promise.all(pokemonPromises);
+    return pokemons; // Retorna un array de PokemonDetail[]
   } catch (error) {
-    console.error(error);
-    return null;
+    console.error("Error al cargar Pokémon:", error);
+    return [];
   }
 };

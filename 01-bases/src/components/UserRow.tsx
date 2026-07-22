@@ -1,15 +1,35 @@
-import React from "react";
+import type { PokemonDetail } from "../interfaces/reqres.response";
 
-const UserRow = () => {
+interface Props {
+  pokemon: PokemonDetail;
+}
+
+const UserRow = ({ pokemon }: Props) => {
+  const imageUrl =
+    pokemon.sprites.front_default ||
+    pokemon.sprites.other?.["official-artwork"].front_default;
+
+  const namePokemon =
+    pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+
   return (
     <tr className="p-2">
       <td>
-        <img src="" alt="User Avatar" className="rounded-full w-14" />
+        <img
+          src={imageUrl!}
+          alt={pokemon.name}
+          className="w-12 h-12 object-contain mx-auto"
+        />
       </td>
-      <td>
-        {"Jasmany"} {"Franco"}
+      <td className="text-center">{namePokemon}</td>
+      <td className="text-center">
+        {" "}
+        {pokemon.types
+          .map(
+            (t) => t.type.name.charAt(0).toUpperCase() + t.type.name.slice(1),
+          )
+          .join(", ")}{" "}
       </td>
-      <td> {"jasmanyfranco@gmail.com"} </td>
     </tr>
   );
 };
