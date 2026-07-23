@@ -1,0 +1,76 @@
+{"_e":"root:init","_t":1784755079963,"format":"v0-jsonl","version":"57.0.10"}
+{"_e":"env:mode","_t":1784755079964,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1784755079967,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1784755080279,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1784755080851,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1784755081555,"plugins":[]}
+{"_e":"metro:instantiate","_t":1784755084770,"atlas":false,"workers":14,"host":"::","port":8081}
+{"_e":"metro:client_log","_t":1784755095835,"level":"error","data":["Project is incompatible with this version of Expo Go\n\nThis project requires a newer version of Expo Go.\n\nHow to fix this error:\nDownload the latest version of Expo Go from the Play Store."]}
+{"_e":"metro:client_log","_t":1784755157178,"level":"error","data":["Project is incompatible with this version of Expo Go\n\nThis project requires a newer version of Expo Go.\n\nHow to fix this error:\nDownload the latest version of Expo Go from the Play Store."]}
+{"_e":"metro:client_log","_t":1784755226577,"level":"error","data":["Project is incompatible with this version of Expo Go\n\nThis project requires a newer version of Expo Go.\n\nHow to fix this error:\nDownload the latest version of Expo Go from the Play Store."]}
+{"_e":"metro:client_log","_t":1784755263835,"level":"error","data":["Project is incompatible with this version of Expo Go\n\nThis project requires a newer version of Expo Go.\n\nHow to fix this error:\nDownload the latest version of Expo Go from the Play Store."]}
+{"_e":"root:init","_t":1784755891885,"format":"v0-jsonl","version":"57.0.10"}
+{"_e":"env:mode","_t":1784755891886,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1784755891888,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1784755892070,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1784755892363,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1784755892524,"plugins":[]}
+{"_e":"metro:instantiate","_t":1784755895538,"atlas":false,"workers":14,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1784755897578,"id":"5","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1784755897578,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1784755897580,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1784755898392,"id":"5","progress":0.010000000000000002,"total":1,"current":1}
+{"_e":"metro:bundling:progress","_t":1784755898495,"id":"5","progress":0.25,"total":8,"current":5}
+{"_e":"metro:bundling:progress","_t":1784755898605,"id":"5","progress":0.36,"total":10,"current":6}
+{"_e":"metro:bundling:progress","_t":1784755898961,"id":"5","progress":0.48999999999999994,"total":10,"current":7}
+{"_e":"metro:bundling:progress","_t":1784755899065,"id":"5","progress":0.48999999999999994,"total":33,"current":22}
+{"_e":"metro:bundling:progress","_t":1784755899169,"id":"5","progress":0.48999999999999994,"total":141,"current":29}
+{"_e":"metro:bundling:progress","_t":1784755899269,"id":"5","progress":0.48999999999999994,"total":166,"current":40}
+{"_e":"metro:bundling:progress","_t":1784755899373,"id":"5","progress":0.48999999999999994,"total":183,"current":50}
+{"_e":"metro:bundling:progress","_t":1784755899474,"id":"5","progress":0.48999999999999994,"total":204,"current":67}
+{"_e":"metro:bundling:progress","_t":1784755899574,"id":"5","progress":0.48999999999999994,"total":245,"current":100}
+{"_e":"metro:bundling:progress","_t":1784755899674,"id":"5","progress":0.48999999999999994,"total":269,"current":143}
+{"_e":"metro:bundling:progress","_t":1784755899774,"id":"5","progress":0.48999999999999994,"total":308,"current":183}
+{"_e":"metro:bundling:progress","_t":1784755899874,"id":"5","progress":0.48999999999999994,"total":350,"current":210}
+{"_e":"metro:bundling:progress","_t":1784755899974,"id":"5","progress":0.48999999999999994,"total":396,"current":248}
+{"_e":"metro:bundling:progress","_t":1784755900074,"id":"5","progress":0.48999999999999994,"total":445,"current":284}
+{"_e":"metro:bundling:progress","_t":1784755900174,"id":"5","progress":0.48999999999999994,"total":462,"current":318}
+{"_e":"metro:bundling:progress","_t":1784755900274,"id":"5","progress":0.5765913121330555,"total":482,"current":366}
+{"_e":"metro:bundling:progress","_t":1784755900374,"id":"5","progress":0.6922760009765625,"total":512,"current":426}
+{"_e":"metro:bundling:progress","_t":1784755900475,"id":"5","progress":0.7491970466238651,"total":543,"current":470}
+{"_e":"metro:bundling:progress","_t":1784755900574,"id":"5","progress":0.866938655745483,"total":566,"current":527}
+{"_e":"metro:bundling:progress","_t":1784755900674,"id":"5","progress":0.8796723482421291,"total":612,"current":574}
+{"_e":"metro:bundling:progress","_t":1784755900774,"id":"5","progress":0.8889795918367347,"total":665,"current":627}
+{"_e":"metro:bundling:progress","_t":1784755900874,"id":"5","progress":0.9370690237966469,"total":688,"current":666}
+{"_e":"metro:bundling:progress","_t":1784755900995,"id":"5","progress":0.9942363232406521,"total":693,"current":691}
+{"_e":"metro:bundling:progress","_t":1784755901320,"id":"5","progress":0.9971160793671616,"total":693,"current":692}
+{"_e":"metro:bundling:progress","_t":1784755901421,"id":"5","progress":0.9971285011230018,"total":696,"current":695}
+{"_e":"metro:bundling:progress","_t":1784755901529,"id":"5","progress":0.999,"total":696,"current":696}
+{"_e":"metro:bundling:progress","_t":1784755901630,"id":"5","progress":0.999,"total":707,"current":707}
+{"_e":"metro:bundling:done","_t":1784755901742,"id":"5","total":707,"ms":4164.3137}
+{"_e":"metro:bundling:started","_t":1784755908458,"id":"6","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1784755908458,"id":"6","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1784755908474,"id":"6","total":1,"ms":15.5794}
+{"_e":"root:init","_t":1784757461471,"format":"v0-jsonl","version":"57.0.10"}
+{"_e":"env:mode","_t":1784757461472,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1784757461475,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1784757461757,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../..\\..\\app","serverComponents":false,"serverActions":false,"serverRendering":false,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1784757462176,"serverRoot":"../..\\..","projectRoot":"../..\\..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":false,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1784757462383,"plugins":[]}
+{"_e":"metro:instantiate","_t":1784757465622,"atlas":false,"workers":14,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1784757662002,"id":"3","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1784757662003,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1784757662007,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1784757662111,"id":"3","progress":0.14363753883363564,"total":219,"current":83}
+{"_e":"metro:bundling:progress","_t":1784757662211,"id":"3","progress":0.453561016243232,"total":441,"current":297}
+{"_e":"metro:bundling:progress","_t":1784757662317,"id":"3","progress":0.744329104190696,"total":612,"current":528}
+{"_e":"metro:bundling:progress","_t":1784757662423,"id":"3","progress":0.999,"total":707,"current":707}
+{"_e":"metro:bundling:done","_t":1784757662453,"id":"3","total":707,"ms":450.4811}
+{"_e":"metro:bundling:started","_t":1784757668953,"id":"5","platform":"android","environment":null,"entry":"index.ts"}
+{"_e":"metro:bundling:progress","_t":1784757668953,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1784757668969,"id":"5","total":1,"ms":16.1018}
+{"_e":"metro:bundling:failed","_t":1784757707465,"id":null,"message":"SyntaxError: C:\\Users\\Jasmany\\Desktop\\React-Native\\02-testing-app\\App.tsx: Unexpected token (7:63)\n\n   5 |   return (\n   6 |     <View style={styles.container}>\n>  7 |       <Text>Jasmany Franco & Digna Sánchez = Nicolás & Selene <3</Text>\n     |                                                                ^\n   8 |       <StatusBar style=\"auto\" />\n   9 |     </View>\n  10 |   );","importStack":null,"filename":"App.tsx","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1784757707689,"id":null,"message":"SyntaxError: C:\\Users\\Jasmany\\Desktop\\React-Native\\02-testing-app\\App.tsx: Unexpected token (7:63)\n\n   5 |   return (\n   6 |     <View style={styles.container}>\n>  7 |       <Text>Jasmany Franco & Digna Sánchez = Nicolás & Selene <3</Text>\n     |                                                                ^\n   8 |       <StatusBar style=\"auto\" />\n   9 |     </View>\n  10 |   );","importStack":null,"filename":"App.tsx","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1784757707883,"id":null,"message":"SyntaxError: C:\\Users\\Jasmany\\Desktop\\React-Native\\02-testing-app\\App.tsx: Unexpected token (7:63)\n\n   5 |   return (\n   6 |     <View style={styles.container}>\n>  7 |       <Text>Jasmany Franco & Digna Sánchez = Nicolás & Selene <3</Text>\n     |                                                                ^\n   8 |       <StatusBar style=\"auto\" />\n   9 |     </View>\n  10 |   );","importStack":null,"filename":"App.tsx","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1784757708021,"id":null,"message":"SyntaxError: C:\\Users\\Jasmany\\Desktop\\React-Native\\02-testing-app\\App.tsx: Unexpected token (7:63)\n\n   5 |   return (\n   6 |     <View style={styles.container}>\n>  7 |       <Text>Jasmany Franco & Digna Sánchez = Nicolás & Selene <3</Text>\n     |                                                                ^\n   8 |       <StatusBar style=\"auto\" />\n   9 |     </View>\n  10 |   );","importStack":null,"filename":"App.tsx","targetModuleName":null,"originModulePath":null}
+{"_e":"metro:bundling:failed","_t":1784757708252,"id":null,"message":"SyntaxError: C:\\Users\\Jasmany\\Desktop\\React-Native\\02-testing-app\\App.tsx: Unexpected token (7:63)\n\n   5 |   return (\n   6 |     <View style={styles.container}>\n>  7 |       <Text>Jasmany Franco & Digna Sánchez = Nicolás & Selene <3</Text>\n     |                                                                ^\n   8 |       <StatusBar style=\"auto\" />\n   9 |     </View>\n  10 |   );","importStack":null,"filename":"App.tsx","targetModuleName":null,"originModulePath":null}
