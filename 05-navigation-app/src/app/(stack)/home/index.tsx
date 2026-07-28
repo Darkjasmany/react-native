@@ -22,6 +22,12 @@ const HomeScreen = () => {
           <CustomButton color={"secondary"}>Profile</CustomButton>
         </Link>
         <CustomButton
+          color={"tertiary"}
+          onPress={() => router.push("/products")} // Esto permite navegar a la pantalla de productos cuando se presiona el botón
+        >
+          Productos
+        </CustomButton>
+        <CustomButton
           className="uppercase"
           variant="text-only"
           onPress={() => router.push("/settings")}

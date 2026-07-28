@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Slot, SplashScreen } from "expo-router";
+import { Slot, SplashScreen, Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import "../global.css";
 
@@ -20,7 +20,8 @@ const RootLayout = () => {
 
   if (!fontsLoaded && !error) return null; // Si hay o no hay un error al cargar las fuentes, no renderiza nada
 
-  return <Slot />;
+  return <Slot />; // Slot se utiliza para renderizar la pantalla correspondiente según la ruta actual, permitiendo que la navegación funcione correctamente dentro de la aplicación.
+  // return <Stack />; // se utiliza Stack en lugar de Slot para manejar la navegación entre pantallas, lo que permite una transición más fluida y controlada entre las diferentes vistas de la aplicación.
 };
 
 export default RootLayout;
