@@ -4,6 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Link, router } from "expo-router";
 import CustomButton from "@/components/shared/CustomButton";
 
+// Todo: Otras forma de navegar a la pantalla de perfil utilizando el componente Link de expo-router. El componente Link permite crear enlaces de navegación entre pantallas de manera declarativa, lo que facilita la navegación en la aplicación.
+
 const HomeScreen = () => {
   return (
     <SafeAreaView>
@@ -14,10 +16,6 @@ const HomeScreen = () => {
         >
           Productos
         </CustomButton>
-        // Todo: Otras forma de navegar a la pantalla de perfil utilizando el
-        componente Link de expo-router. El componente Link permite crear enlaces
-        de navegación entre pantallas de manera declarativa, lo que facilita la
-        navegación en la aplicación.
         <Link href={"/profile"} asChild>
           <CustomButton color={"secondary"}>Profile</CustomButton>
         </Link>
