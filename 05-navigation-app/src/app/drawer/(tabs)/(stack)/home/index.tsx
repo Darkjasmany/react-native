@@ -12,23 +12,23 @@ const HomeScreen = () => {
       <View className="px-10 mt-5 flex flex-col gap-3">
         <CustomButton
           color={"primary"}
-          onPress={() => router.push("/tabs/products")} // Esto permite navegar a la pantalla de productos cuando se presiona el botón
+          onPress={() => router.push("/drawer/(tabs)/(stack)/products")} // Esto permite navegar a la pantalla de productos cuando se presiona el botón
         >
           Productos
         </CustomButton>
-        <Link href={"/tabs/profile"} asChild>
+        <Link href={"/drawer/(tabs)/(stack)/profile"} asChild>
           <CustomButton color={"secondary"}>Profile</CustomButton>
         </Link>
         <CustomButton
           color={"tertiary"}
-          onPress={() => router.push("/tabs/products")} // Esto permite navegar a la pantalla de productos cuando se presiona el botón
+          onPress={() => router.push("/drawer/(tabs)/(stack)/products")} // Esto permite navegar a la pantalla de productos cuando se presiona el botón
         >
           Productos
         </CustomButton>
         <CustomButton
           className="uppercase"
           variant="text-only"
-          onPress={() => router.push("/tabs/settings")}
+          onPress={() => router.push("/drawer/(tabs)/(stack)/settings")}
         >
           Settings
         </CustomButton>
