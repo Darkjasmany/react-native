@@ -6,12 +6,16 @@ import { Tabs } from "expo-router";
 const TabsLayout = () => {
   return (
     <Tabs
-      screenOptions={{ tabBarActiveTintColor: "green", headerShown: false }}
+      screenOptions={{
+        tabBarActiveTintColor: "green",
+        // headerShown: false
+      }}
     >
       <Tabs.Screen
         name="(stack)"
         options={{
           title: "Stack",
+          headerShown: false, // Esto permite ocultar la barra de navegación (header) en la pantalla del Stack, proporcionando una experiencia de usuario más limpia y enfocada en el contenido de la pantalla.
           tabBarIcon: ({ color }) => (
             <Ionicons size={28} name="person-add-outline" color={color} />
           ),
