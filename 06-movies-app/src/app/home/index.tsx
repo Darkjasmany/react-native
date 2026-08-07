@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   useSafeAreaInsets,
 } from "react-native-safe-area-context";
+import MainSlideshow from "@/presentation/components/MainSlideshow";
 
 const HomeScreen = () => {
   const safeArea = useSafeAreaInsets(); // Obtenemos los valores de safe area para ajustar el contenido de la pantalla
@@ -26,6 +27,8 @@ const HomeScreen = () => {
     <View style={{ paddingTop: safeArea.top }} className="mt-2">
       <Text className="text-3xl font-bold px-4 mb-2">HomeScreen</Text>
       {/* <Text>{JSON.stringify(nowPlayingQuery.data)}</Text> */}
+      {/* Carrousel de películas */}
+      <MainSlideshow movies={nowPlayingQuery.data || []} />
     </View>
   );
 };
