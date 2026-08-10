@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
-import { Text, useWindowDimensions, View } from "react-native";
+import { useWindowDimensions, View } from "react-native";
 import { Carousel } from "react-native-reanimated-carousel";
 import { Movie } from "@/infrastructure/interfaces/movie.interface";
+import MoviePoster from "./MoviePoster";
 
 interface Props {
   movies: Movie[];
@@ -14,14 +15,19 @@ const MainSlideshow = ({ movies }: Props) => {
   // Manera como se quiere renderizar cada item del carrousel, en este caso se renderiza un componente MovieCard que recibe como props la pelicula
   // width es el grosor de las tarjetas internas del carrousel, en este caso se quiere que parezcan tarjetas
   return (
-    <View id="carousel-component" className="w-full h-[350px]">
+    <View id="carousel-component" className="h-[250px] w-full">
       <Carousel
         autoplayInterval={2000} // Intervalo de tiempo para que el carrousel avance automaticamente
         ref={ref}
         data={movies}
         loop={true} // Para que el carrousel se repita infinitamente
-        style={{ width, height: 350 }} // Ancho y alto del carrousel
-        itemSize={width * 0.8}
+        style={{
+          width,
+          height: 350,
+          justifyContent: "center",
+          alignItems: "center",
+        }} // Ancho y alto del carrousel
+        itemSize={200} // Un tamaño de item más angosto para forzar el rectángulo vertical
         defaultIndex={1} // Indice inicial del carrousel, en este caso se quiere que empiece en la segunda tarjeta
         layout={{
           type: "parallax", // Tipo de layout del carrousel
@@ -29,9 +35,7 @@ const MainSlideshow = ({ movies }: Props) => {
           offset: 50, // Offset de las tarjetas internas del carrousel
         }}
         renderItem={({ item }) => (
-          <View className="flex-1 justify-center items-center bg-gray-200 rounded-xl m-2">
-            <Text className="text-center font-bold text-lg">{item.title}</Text>
-          </View>
+          <MoviePoster id={item.id} posterPath={item.poster} />
         )}
       />
     </View>
