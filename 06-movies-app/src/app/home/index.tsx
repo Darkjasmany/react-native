@@ -1,10 +1,7 @@
-import { View, Text, ActivityIndicator, SafeAreaViewBase } from "react-native";
 import React from "react";
+import { View, Text, ActivityIndicator } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useMovies } from "@/presentation/hooks/useMovies";
-import {
-  SafeAreaView,
-  useSafeAreaInsets,
-} from "react-native-safe-area-context";
 import MainSlideshow from "@/presentation/components/MainSlideshow";
 
 const HomeScreen = () => {
