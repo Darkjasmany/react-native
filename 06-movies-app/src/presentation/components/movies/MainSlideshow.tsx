@@ -20,7 +20,7 @@ const MainSlideshow = ({ movies }: Props) => {
         autoplayInterval={2000} // Intervalo de tiempo para que el carrousel avance automaticamente
         ref={ref}
         data={movies}
-        loop={true} // Para que el carrousel se repita infinitamente
+        loop // loop={true} // Para que el carrousel se repita infinitamente, si es una propiedad booleana, no es necesario poner el valor, solo con poner la propieadad es suficiente
         style={{
           width,
           height: 350,

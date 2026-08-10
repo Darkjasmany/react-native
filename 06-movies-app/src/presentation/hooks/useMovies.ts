@@ -1,4 +1,5 @@
 import { nowPlayingActions } from "@/core/actions/movies/now-playing.action";
+import { popularMoviesActions } from "@/core/actions/movies/popular";
 import { useQuery } from "@tanstack/react-query";
 
 export const useMovies = () => {
@@ -9,7 +10,14 @@ export const useMovies = () => {
     staleTime: 1000 * 60 * 5, // Se define el tiempo que los datos de la consulta se consideran "frescos" antes de ser considerados "obsoletos". En este caso, se establece en 5 minutos (1000 ms * 60 s * 5 min).
   });
 
+  const popularQuery = useQuery({
+    queryKey: ["movies", "popular"],
+    queryFn: popularMoviesActions,
+    staleTime: 1000 * 60 * 5,
+  });
+
   return {
     nowPlayingQuery,
+    popularQuery,
   };
 };
