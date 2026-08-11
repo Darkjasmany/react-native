@@ -39,10 +39,12 @@ const HomeScreen = () => {
         />
 
         {/* Top Rated Movies List */}
+        {/* 4. Para el infiniteQuery tenemos que pasar el loadNextPage */}
         <MoviesHorizontalList
           title="Mejores Puntuadas"
-          movies={topRatedQuery.data || []}
+          movies={topRatedQuery.data?.pages.flat() || []}
           className="mb-5"
+          loadNextPage={topRatedQuery.fetchNextPage}
         />
 
         {/* Upcoming Movies List */}

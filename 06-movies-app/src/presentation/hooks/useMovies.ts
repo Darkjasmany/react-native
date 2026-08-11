@@ -2,7 +2,7 @@ import { nowPlayingActions } from "@/core/actions/movies/now-playing.action";
 import { popularMoviesActions } from "@/core/actions/movies/popular.action";
 import { topRatedMoviesActions } from "@/core/actions/movies/to-rated.action";
 import { upcomingMoviesActions } from "@/core/actions/movies/upcoming.action";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 
 export const useMovies = () => {
   // Queries
@@ -18,10 +18,16 @@ export const useMovies = () => {
     staleTime: 1000 * 60 * 5,
   });
 
-  const topRatedQuery = useQuery({
+  // 3. Como necesitamos enviar el params y si necesitamos definir un Infinite Scroll tenemos que usar el objeto de TanStack useInifityQuery
+  const topRatedQuery = useInfiniteQuery({
+    initialPageParam: 1, // numero establecido por default*
     queryKey: ["movies", "topRated"],
-    queryFn: topRatedMoviesActions,
+    queryFn: ({ pageParam }) => {
+      console.log({ pageParam });
+      return topRatedMoviesActions({ page: pageParam });
+    },
     staleTime: 1000 * 60 * 5,
+    getNextPageParam: (lastPage, pages) => pages.length + 1, // determinar la siguiente page* esto es un array de array
   });
 
   const upcomingQuery = useQuery({

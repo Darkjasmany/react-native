@@ -7,13 +7,13 @@ import {
 } from "react-native";
 import { Movie } from "@/infrastructure/interfaces/movie.interface";
 import MoviePoster from "./MoviePoster";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 interface Props {
   title?: string;
   movies: Movie[];
   className?: string;
-  loadNextPage: () => void;
+  loadNextPage?: () => void;
 }
 
 /**
@@ -32,6 +32,13 @@ const MoviesHorizontalList = ({
 }: Props) => {
   const isLoading = useRef(false); // se usa el useRef
 
+  // 5. Defino el useEffect para realizar el cambio
+  useEffect(() => {
+    setTimeout(() => {
+      isLoading.current = false;
+    }, 200);
+  }, [movies]);
+
   const onScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     if (isLoading.current) return; // empiezo a cargar esto va a impedir que se siga ejecutando
 
@@ -45,7 +52,7 @@ const MoviesHorizontalList = ({
     isLoading.current = true; // evitar que al hacer scroll se vuelva hacer todo este proceso
 
     // TODO:
-    console.log("carar siente peli");
+    console.log("Cargar la siguiente películas");
 
     loadNextPage && loadNextPage(); // si nosotros tenemos 1 valor definido va a ejcutar la funcion
   };
@@ -58,7 +65,7 @@ const MoviesHorizontalList = ({
         data={movies}
         showsHorizontalScrollIndicator={false} // Para que no se muestre la barra de scroll horizontal
         contentContainerStyle={{ paddingHorizontal: 10 }} // Para que no se pegue a los bordes de la pantalla
-        keyExtractor={(item) => `${item.id}`}
+        keyExtractor={(item, i) => `${item.id}-${i}`}
         renderItem={({ item }) => (
           <MoviePoster id={item.id} posterPath={item.poster} smallPoster />
         )}
