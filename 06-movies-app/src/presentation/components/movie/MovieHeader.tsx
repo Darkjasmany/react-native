@@ -24,11 +24,11 @@ const MovieHeader = ({ poster, originalTitle, title }: Props) => {
       {/* Gradiente */}
       <LinearGradient
         colors={["rgba(0,0,0,0.3)", "transparent"]}
-        start={[0, 0]}
+        start={[0, 0]} // empieze de la esquina superior izquierda hasta la esquina inferior derecha , si pongo 1 seria al final de todo el espacio dado
         style={{
-          height: screenHeight * 0.4,
+          height: screenHeight * 0.4, // ocupe un 40% de la pantalla
           position: "absolute",
-          zIndex: 1,
+          zIndex: 1, // asegurarme que este arriba
           width: "100%",
         }}
       />
@@ -43,6 +43,7 @@ const MovieHeader = ({ poster, originalTitle, title }: Props) => {
           left: 10,
         }}
       >
+        {/* router.dismiss() Cierra esa pantalla y cierra esa seccion */}
         <Pressable onPress={() => router.dismiss()}>
           <Ionicons
             name="arrow-back"
