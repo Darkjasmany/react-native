@@ -1,6 +1,4 @@
 import { View, Text, ViewProps } from "react-native";
-import React from "react";
-import { Background } from "expo-router/build/react-navigation";
 import { useThemeColor } from "@/hooks/useThemeColor";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
