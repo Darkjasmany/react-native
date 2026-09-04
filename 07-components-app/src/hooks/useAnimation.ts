@@ -1,9 +1,10 @@
-import { Animated, Easing } from "react-native";
+import { Animated, Easing, PanResponder } from "react-native";
 import { useRef } from "react";
 
 const useAnimation = () => {
   const animatedOpacity = useRef(new Animated.Value(0)).current; // Inicializa el valor de la opacidad en 0 se usa useRef para mantener el valor entre renderizados
   const animatedTop = useRef(new Animated.Value(0)).current;
+  const pan = useRef(new Animated.ValueXY()).current; // Inicializa el valor de la posición en 0,0 se usa useRef para mantener el valor entre renderizados
 
   const fadeIn = ({
     duration = 300,
@@ -67,14 +68,46 @@ const useAnimation = () => {
     }).start(callback);
   };
 
+  // TODO Animated.ValueXY PanReponder
+  /**
+   * PanReponder es un objeto que permite manejar gestos de arrastre (drag) en la pantalla, en este caso se usa para mover un componente de forma interactiva con el dedo del usuario.
+   * Se usa useRef para mantener el valor entre renderizados, evita que se limpie el estado del gesto mientras intectúas con el elemento.
+   * useNativeDriver se pone en false porque React Native lanza un error si intentas animar propiedades basadas en layout (como top, left, right, bottom) con el driver nativo.
+   * onMoveShouldSetPanResponder: () => true: Asegura que el responder tome el control continuo del gesto cuando arrastras el dedo por la pantalla.
+   */
+  const panResponder = useRef(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onMoveShouldSetPanResponder: () => true, // Importante para detectar el movimiento
+      onPanResponderMove: Animated.event(
+        [
+          null,
+          {
+            dx: pan.x, // x,y are Animated.Value
+            dy: pan.y,
+          },
+        ],
+        { useNativeDriver: false }, // panHandlers/layout requiere false
+      ),
+      onPanResponderRelease: () => {
+        Animated.spring(
+          pan, // Auto-multiplexed
+          { toValue: { x: 0, y: 0 }, useNativeDriver: false }, // Back to zero Cambiado a false porque getLayout() maneja propiedades no nativas
+        ).start();
+      },
+    }),
+  ).current;
+
   return {
     animatedTop,
     animatedOpacity,
+    pan, // Animated.ValueXY
 
     // Methods
     fadeIn,
     fadeOut,
     startMovingTopPosition,
+    panResponder,
   };
 };
 

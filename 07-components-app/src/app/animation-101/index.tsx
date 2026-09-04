@@ -31,7 +31,7 @@ const Animation101Screen = () => {
         className="my-5"
         onPress={() => {
           fadeIn({}); //  TODO al enviar {} se usan los valores por defecto de la función
-          startMovingTopPosition({ easing: Easing.bounce });
+          startMovingTopPosition({});
         }}
       >
         FadeIn
