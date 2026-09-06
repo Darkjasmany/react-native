@@ -1,10 +1,11 @@
-import { View, Text } from 'react-native';
+import ThemedCard from "@/presentation/shared/ThemedCard";
+import ThemedView from "@/presentation/shared/ThemedView";
 
 const SectionListScreen = () => {
   return (
-    <View>
-      <Text>SectionListScreen</Text>
-    </View>
+    <ThemedView margin>
+      <ThemedCard></ThemedCard>
+    </ThemedView>
   );
 };
 export default SectionListScreen;
