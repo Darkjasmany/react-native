@@ -20,7 +20,8 @@ export const menuRoutes: MenuRote[] = [
   {
     title: "Modal",
     icon: "copy-outline",
-    name: "modal/index",
+    // name: "modal/index",
+    name: "modal", // busca por defecto _layout
   },
   {
     title: "InfiniteScroll",
