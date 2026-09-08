@@ -54,7 +54,15 @@ export default function RootLayout() {
           {/* Nota: Asume que cada elemento de allRoutes es un array [name, title]. Si en realidad son objetos {(name, title)}, el destructuring sería{(name, title)} en lugar de [name, title]. */}
           {/* {allRoutes.map((route) => ( */}
           {allRoutes.map(({ name, title }) => (
-            <Stack.Screen key={name} name={name} options={{ title: title }} />
+            <Stack.Screen
+              key={name}
+              name={name}
+              options={{
+                title: title,
+                // Todo si se quiere quitar la barra de navegación de la pantall
+                headerShown: title.includes("Slides") ? false : true,
+              }}
+            />
           ))}
         </Stack>
       </ThemeProvider>

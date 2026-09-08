@@ -1,18 +1,18 @@
-import ThemedButton from "@/presentation/shared/ThemedButton";
-import ThemedText from "@/presentation/shared/ThemedText";
-import ThemedView from "@/presentation/shared/ThemedView";
 import { useRef, useState } from "react";
 import {
   View,
-  Text,
   ImageSourcePropType,
   FlatList,
   useWindowDimensions,
   Image,
-  Dimensions,
   NativeSyntheticEvent,
   NativeScrollEvent,
 } from "react-native";
+import { router } from "expo-router";
+
+import ThemedButton from "@/presentation/shared/ThemedButton";
+import ThemedText from "@/presentation/shared/ThemedText";
+import ThemedView from "@/presentation/shared/ThemedView";
 
 interface Slide {
   title: string;
@@ -43,12 +43,11 @@ const SlidesScreen = () => {
   const flatListRef = useRef<FlatList>(null); // obtenemos la referencia del Flatlist
   const { width } = useWindowDimensions(); // Obtenemos el ancho de la pantalla para el cálculo
 
-  // TODO: Función que calcula la posición actual al hacer scroll
+  // TODO: Función que calcula la posición actual al hacer scroll, para saber que tipo es el event solo se deja el curso encima del onScroll del FlatList
   const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     const offsetX = event.nativeEvent.contentOffset.x;
     // Dividimos el desplazamiento entre el ancho de la pantalla y redondeamos
     const index = Math.round(offsetX / width);
-
     // Solo actualizamos el estado si el indice cambio y el indice es mayor o iogual a 0
     if (index !== currentIndex && index >= 0 && index < items.length) {
       setCurrentIndex(index);
@@ -76,8 +75,8 @@ const SlidesScreen = () => {
   };
 
   const handleFinish = () => {
-    // Aquí agregas la lógica para finalizar el onboarding (ej: navegar al Home)
-    console.log("Onboarding Finalizado");
+    router.dismiss(); // cierra la pantalla actual o modal actual
+    // router.canDismiss() || router.canGoBack() //TODO se recomienda cualquiera de estas dos ya que si no hay una pantalla anterior sacaria de nuestra aplicacion el .dismis()
   };
 
   const isFirstItem = currentIndex === 0;
@@ -89,6 +88,7 @@ const SlidesScreen = () => {
         data={items}
         horizontal
         pagingEnabled // Hace que se ajuste como páginas independientes
+        scrollEnabled={true} // bloquea el scroll
         showsHorizontalScrollIndicator={false}
         onScroll={handleScroll}
         keyExtractor={(item) => item.title}
