@@ -22,8 +22,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "12345678-1234-1234-1234-123456789abc"
-      }
+        "projectId": "a231094f-36e6-4e40-966b-50346cc6c2bb"
+      },
+      "router": {}
     },
     "web": {
       "output": "static",
@@ -44,6 +45,7 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "owner": "darkjasmanys-team"
   }
 }

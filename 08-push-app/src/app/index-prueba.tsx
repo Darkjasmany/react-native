@@ -2,25 +2,20 @@ import Constants, { ExecutionEnvironment } from "expo-constants";
 import { useEffect, useState } from "react";
 import { Button, Platform, Text, View } from "react-native";
 
-export default function PushApp() {
+export default function App() {
   const [expoPushToken, setExpoPushToken] = useState("");
   const [notification, setNotification] = useState<any>(undefined);
 
   useEffect(() => {
-    async function initNotifications() {
-      // Si estamos en Expo Go, evitamos cargar el módulo nativo que causa el crash
+    async function setupNotifications() {
       const isExpoGo =
         Constants.executionEnvironment === ExecutionEnvironment.StoreClient;
 
       if (isExpoGo) {
-        console.warn(
-          "Notificaciones en Expo Go deshabilitadas por restricciones del SDK 53.",
-        );
-        setExpoPushToken("ExponentPushToken[TokenSimuladoParaCurso]");
+        setExpoPushToken("ExponentPushToken[SimuladoExpoGo]");
         return;
       }
 
-      // Carga dinámica del módulo solo fuera de Expo Go
       const Notifications = await import("expo-notifications");
 
       Notifications.setNotificationHandler({
@@ -56,26 +51,17 @@ export default function PushApp() {
           Constants?.easConfig?.projectId;
 
         try {
-          const pushTokenString = (
+          const token = (
             await Notifications.getExpoPushTokenAsync({ projectId })
           ).data;
-          setExpoPushToken(pushTokenString);
+          setExpoPushToken(token);
         } catch (e) {
-          console.error("Error al obtener token:", e);
+          console.error(e);
         }
       }
-
-      const notificationListener =
-        Notifications.addNotificationReceivedListener((notification) => {
-          setNotification(notification);
-        });
-
-      return () => {
-        notificationListener.remove();
-      };
     }
 
-    initNotifications();
+    setupNotifications();
   }, []);
 
   return (
@@ -87,27 +73,12 @@ export default function PushApp() {
         padding: 20,
       }}
     >
-      <Text style={{ fontWeight: "bold", textAlign: "center" }}>
-        Your Expo push token:
+      <Text style={{ textAlign: "center" }}>
+        Your Expo push token: {expoPushToken}
       </Text>
-      <Text style={{ textAlign: "center", fontSize: 12, color: "#666" }}>
-        {expoPushToken}
-      </Text>
-
-      <View style={{ alignItems: "center", justifyContent: "center" }}>
-        <Text>Title: {notification && notification.request.content.title}</Text>
-        <Text>Body: {notification && notification.request.content.body}</Text>
-        <Text>
-          Data:{" "}
-          {notification && JSON.stringify(notification.request.content.data)}
-        </Text>
-      </View>
-
       <Button
         title="Press to Send Notification"
-        onPress={() => {
-          alert("Simulación de notificación enviada");
-        }}
+        onPress={() => alert("Notificación enviada")}
       />
     </View>
   );
